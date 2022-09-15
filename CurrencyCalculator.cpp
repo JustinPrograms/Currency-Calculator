@@ -7,13 +7,15 @@ using json = nlohmann::json;
 
 // Referncing &domain and &path to save memory
 auto get(const std::string &domain, const std::string &path) -> json {
+    // @return json
+
     auto cli = httplib::Client(domain);
     return json::parse(cli.Get(path)->body);
 }
 
 // Gets the currency symbol and the amount 
 auto convert(const std::string& from, double amount) -> double {
-    // return type double
+    // @return double
 
     if (amount <= 0)
         return 0;
@@ -26,7 +28,7 @@ auto convert(const std::string& from, double amount) -> double {
 
 
 auto get_input() -> double {
-    // return type double
+    // @return double
 
     double amount;
     std::string currency;
@@ -106,9 +108,9 @@ int main()
 
 
     /* 
-    Printing out the final value in CAD
-    Setting the final value to two decimal places
-    */
+     * Printing out the final value in CAD
+     * Setting the final value to two decimal places
+     */
     
     std::cout << std::fixed << std::setprecision(2) << "CAD = $" << sumInCAD;
 
