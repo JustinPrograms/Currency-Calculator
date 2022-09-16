@@ -111,7 +111,6 @@ int main()
      * Printing out the final value in CAD
      * Setting the final value to two decimal places
      */
-    
     std::cout << std::fixed << std::setprecision(2) << "CAD = $" << sumInCAD;
 
     return 0;
